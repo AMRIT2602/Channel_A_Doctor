@@ -1,0 +1,56 @@
+﻿@page
+@model Channel_A_Doctor.Pages.Appointments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="rounded bg-primary">All Appointments</h2>
+
+<p>
+    <a class="btn btn-dark" asp-page="Create">Make Appointment </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment[0].Patient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment[0].Doctor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment[0].AppointmentDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Appointment) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentDate)
+            </td>
+            <td>
+                <a class="btn btn-dark" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-dark" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-dark" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

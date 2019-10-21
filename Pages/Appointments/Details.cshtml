@@ -1,0 +1,37 @@
+﻿@page
+@model Channel_A_Doctor.Pages.Appointments.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.Patient)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.Patient.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.Doctor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.Doctor.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.AppointmentDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.AppointmentDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-dark"  asp-page="./Edit" asp-route-id="@Model.Appointment.Id">Edit</a> |
+   
+</div>

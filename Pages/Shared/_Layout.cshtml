@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>E Chanelling</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body style="background-size:cover;  background-image : url('/Content/images/doctor2.jpg')">
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">E Channeling </div>
+            <div class="list-group list-group-flush">
+                <a href="/" class="list-group-item list-group-item-primary list-group-item-action ">Home</a>
+                <a href="/Appointments/Index" class="list-group-item list-group-item-success list-group-item-action ">Appointments</a>
+                <a href="/Doctors/Index" class="list-group-item list-group-item-info list-group-item-action ">Doctors Information</a>
+                <a href="/Patients/Index" class="list-group-item  list-group-item-success list-group-item-action">Patients</a>
+                <a href="/MedicalCentres/Index" class="list-group-item list-group-item-info list-group-item-action">Medical Centre Information</a>
+
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper"  >
+
+            <div class="container bg-info"  >
+
+                @RenderBody()
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

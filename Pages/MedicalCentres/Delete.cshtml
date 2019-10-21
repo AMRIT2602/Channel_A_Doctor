@@ -1,0 +1,34 @@
+﻿@page
+@model Channel_A_Doctor.Pages.MedicalCentres.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MedicalCentre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalCentre.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MedicalCentre.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalCentre.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MedicalCentre.Phone)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="MedicalCentre.Id" />
+        <input class="btn btn-dark" type="submit" value="Delete" class="btn btn-default" /> |
+      
+    </form>
+</div>

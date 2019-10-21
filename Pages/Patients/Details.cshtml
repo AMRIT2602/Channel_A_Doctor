@@ -1,0 +1,37 @@
+﻿@page
+@model Channel_A_Doctor.Pages.Patients.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Patient.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.IDNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Patient.IDNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Patient.Phone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-dark" asp-page="./Edit" asp-route-id="@Model.Patient.Id">Edit</a> |
+  
+</div>

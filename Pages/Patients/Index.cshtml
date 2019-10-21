@@ -1,0 +1,48 @@
+﻿@page
+@model Channel_A_Doctor.Pages.Patients.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="rounded bg-primary">All Patients</h2>
+
+<p>
+    <a class="btn btn-dark" asp-page="Create">Register a Patient</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient[0].IDNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient[0].Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Patient) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                <a class="btn btn-dark" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-dark" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-dark" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
